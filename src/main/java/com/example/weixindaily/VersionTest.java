@@ -23,7 +23,7 @@ public class VersionTest {
         for (ServiceEnum serviceEnum : ServiceEnum.values()) {
             getVersion(serviceEnum);
         }
-//        getVersion(ServiceEnum.AUTH);
+//        getVersion(ServiceEnum.COUPON);
     }
     
     
@@ -33,7 +33,7 @@ public class VersionTest {
         String prod = "https://fsx.tzjjfsx.com:9087";
         String test = "https://fsxtest.tzjjfsx.com:9087";
         String url = serviceEnum.getServiceVersionUrl();
-        int serviceNum = 20; //服务数量，稍微写大一点
+        int serviceNum = 40; //服务数量，稍微写大一点
         VersionInfo versionInfo = new VersionInfo();
         HashSet<String> prodVersionSet = new HashSet<>();
         HashSet<String> testVersionSet = new HashSet<>();
@@ -61,7 +61,7 @@ public class VersionTest {
         versionInfo.setTestVersion(String.join(" ", testVersionSet));
         versionInfo.setProdVersion(String.join(" ", prodVersionSet));
 
-        System.out.println(versionInfo.getServiceName() + ": " + versionInfo.getProdVersion() + "  " + versionInfo.getTestVersion());
+        System.out.println(versionInfo.getServiceName() + ": 正式" + versionInfo.getProdVersion() + "  测试" + versionInfo.getTestVersion());
     }
     
     
